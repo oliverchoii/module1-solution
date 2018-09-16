@@ -10,11 +10,14 @@ angular.module('LunchChecker', [])
 
   $scope.displayTooMuchorWhat = function () {
     var itemCount = calculateNumberOfItem($scope.input);
-    if(itemCount >= 4){
+    if(!$scope.input){
+        $scope.TooMuchorWhat = "Please input data first";
+    }else if (itemCount >= 4) {
         $scope.TooMuchorWhat = "Too Much!";
-    }else{
+    }else {
         $scope.TooMuchorWhat = "Enjoy!";
     }
+
     console.log("itemCount::" + itemCount);
   };
 
